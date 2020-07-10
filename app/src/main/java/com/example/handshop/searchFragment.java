@@ -96,7 +96,7 @@ public class searchFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (searchBar.getText().toString().equals("")){
-                    //mUser.clear();
+                    mUser.clear();
                     for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                        User user= snapshot.getValue(User.class);
                        mUser.add(user);
