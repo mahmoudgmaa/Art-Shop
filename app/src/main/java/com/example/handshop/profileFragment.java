@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -26,6 +27,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
@@ -35,7 +40,11 @@ public class profileFragment extends Fragment {
         ImageView options;
     TextView nposts, followers, following, fullname, bio, username;
     Button edit_profile;
+
     private RecyclerView recyclerView;
+    private ArrayList<posts> arrayList;
+    private profilePhotosAdapter adapter;
+
     private RecyclerView recyclerView_saves;
     ImageButton my_fotos, saved_fotos;
     FirebaseUser firebaseUser;
@@ -59,7 +68,17 @@ public class profileFragment extends Fragment {
         my_fotos = view.findViewById(R.id.my_fotos);
         saved_fotos = view.findViewById(R.id.saved_fotos);
         options = view.findViewById(R.id.options);
+
+
         recyclerView = view.findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        GridLayoutManager gridLayoutManager=new GridLayoutManager(getContext() , 3);
+        recyclerView.setLayoutManager(gridLayoutManager);
+        arrayList=new ArrayList<>();
+        myPosts();
+        adapter=new profilePhotosAdapter(getContext() , arrayList);
+        recyclerView.setAdapter(adapter);
+
         recyclerView_saves = view.findViewById(R.id.recycler_view_save);
         userInfo();
         numberOfFollowers();
@@ -191,5 +210,26 @@ public class profileFragment extends Fragment {
         });
     }
 
+    public void myPosts(){
+        DatabaseReference reference=FirebaseDatabase.getInstance().getReference("posts");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                arrayList.clear();
+                for(DataSnapshot snapshot:dataSnapshot.getChildren()){
+                    posts posts=dataSnapshot.getValue(com.example.handshop.posts.class);
+                    if(posts.getPublisher().equals(profileId)){
+                        arrayList.add(posts);
+                    }
+                }
+                Collections.reverse(arrayList);
+                adapter.notifyDataSetChanged();
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
 }
