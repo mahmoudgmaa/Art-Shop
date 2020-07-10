@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".commentActivity"
+    android:background="#ffffff">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/commentsToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/white_grey_border_top">
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+
+           >
+        <TextView
+            android:id="@+id/backFromComments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comments"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
+           <ImageView
+               android:layout_width="30dp"
+               android:layout_height="30dp"
+               android:layout_marginRight="10dp"
+               android:layout_centerVertical="true"
+               android:src="@drawable/messages_foreground"
+               android:layout_alignParentEnd="true"
+               android:layout_alignParentRight="true"
+               android:id="@+id/sharePostFromComments"/>
+
+       </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/commentRecyclerView"
+        android:layout_above="@id/bottomComment"
+        android:layout_below="@id/commentsToolbar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomComment"
+        android:background="#fff"
+        android:padding="4dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="3dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/commentImageProfile"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/commentImageProfile"
+            android:hint="Add a comment..."
+            android:textColorHint="@color/black"
+            android:id="@+id/add_comment"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/transparent"
+            android:layout_toLeftOf="@id/postTheComment"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="POST"
+            android:id="@+id/postTheComment"
+            android:layout_marginEnd="5dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

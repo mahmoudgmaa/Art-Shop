@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item android:id="@+id/archive" android:title="Archive" android:icon="@drawable/archive_foreground" />
+    <item android:id="@+id/saved" android:title="Saved" android:icon="@drawable/saved_foreground"/>
+    <item android:id="@+id/discover" android:title="Discover people" android:icon="@drawable/discover_foreground" app:showAsAction="ifRoom"/>
+    <item android:id="@+id/setting" android:title="setting" android:icon="@drawable/setting_foreground"  />
+</menu>

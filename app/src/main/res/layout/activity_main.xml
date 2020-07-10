@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#ffffff"
+    android:padding="10dp"
+    >
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:src="@drawable/lllart"
+        android:id="@+id/logo"
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/logo"
+        android:id="@+id/linear3"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="We need your Art"
+        android:textColor="#414042"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Just make it."
+            android:textColor="#414042"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Publish your Art, sell it and get feedbacks, turn it to a buissness."
+            android:textColor="#414042"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+
+    <Button
+    android:id="@+id/logInBtn"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_below="@id/linear3"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:background="@drawable/button2"
+
+    android:text="Have an account? Log In"
+    android:textColor="#ffffff"
+    android:textStyle="bold"
+    android:layout_marginTop="50dp"
+        android:textSize="15sp"/>
+
+    <Button
+        android:textSize="15sp"
+        android:id="@+id/signUpBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/logInBtn"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/button2"
+
+        android:text="First time? Sign Up"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

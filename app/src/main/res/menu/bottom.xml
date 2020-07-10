@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:title=""
+    android:id="@+id/homeBottomMenu"
+    android:icon="@drawable/home_foreground"/>
+    <item
+        android:title=""
+        android:id="@+id/searchBottomMenu"
+        android:icon="@drawable/search_foreground"/>
+    <item
+        android:title=""
+        android:id="@+id/addBottomMenu"
+        android:icon="@drawable/add_foreground"/>
+    <item
+        android:title=""
+        android:id="@+id/loveBottomMenu"
+        android:icon="@drawable/love_foreground"/>
+    <item
+        android:title=""
+        android:id="@+id/userBottomMenu"
+        android:icon="@drawable/user_foreground"/>
+
+
+
+
+</menu>
