@@ -1,4 +1,4 @@
-package com.example.handshop;
+package com.example.handshop.models;
 
 public class comment {
     private String comment;

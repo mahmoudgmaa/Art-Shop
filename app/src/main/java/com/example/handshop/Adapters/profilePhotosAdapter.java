@@ -1,4 +1,4 @@
-package com.example.handshop;
+package com.example.handshop.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.handshop.R;
+import com.example.handshop.models.posts;
 
 import java.util.ArrayList;
 

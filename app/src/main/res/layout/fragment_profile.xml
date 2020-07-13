@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".profileFragment">
+    tools:context=".Fragments.profileFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/bar"
@@ -196,39 +196,39 @@
                 android:layout_marginLeft="-5dp"
                 android:layout_marginRight="-5dp"
                 android:id="@+id/last_bar"
-                android:background="@drawable/button_black"
                 android:orientation="horizontal">
 
-                <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:id="@+id/my_fotos"
-                    android:src="@drawable/ic_grid"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:layout_height="wrap_content" />
-
-                <ImageButton
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:id="@+id/saved_fotos"
-                    android:src="@drawable/ic_save"
+                <com.google.android.material.tabs.TabLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="?android:attr/buttonBarButtonStyle"/>
-
+                    android:background="@drawable/button_black"
+                    android:id="@+id/tabs"
+                    app:tabIconTint="#000000">
+                    <!--                <com.google.android.material.tabs.TabItem-->
+                    <!--                    android:icon="@drawable/ic_grid"-->
+                    <!--                    android:layout_height="wrap_content"-->
+                    <!--                    android:layout_width="wrap_content"-->
+                    <!--                    android:foregroundTint="@color/black"/>-->
+                    <!--                    <com.google.android.material.tabs.TabItem-->
+                    <!--                        android:icon="@drawable/ic_save"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:foregroundTint="@color/black"/>-->
+                </com.google.android.material.tabs.TabLayout>
             </LinearLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/last_bar"
-                android:id="@+id/recycler_view"/>
+                android:layout_height="match_parent">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/last_bar"
-                android:visibility="gone"
-                android:id="@+id/recycler_view_save"/>
+                <androidx.viewpager.widget.ViewPager
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:id="@+id/mainContainerViewPager"
+                    android:background="#ffffff">
+
+                </androidx.viewpager.widget.ViewPager>
+            </RelativeLayout>
 
         </LinearLayout>
 

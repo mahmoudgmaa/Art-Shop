@@ -1,4 +1,4 @@
-package com.example.handshop;
+package com.example.handshop.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.handshop.Adapters.commentsAdapter;
+import com.example.handshop.R;
+import com.example.handshop.models.User;
+import com.example.handshop.models.comment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -117,7 +121,7 @@ public class commentActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 commentArrayList.clear();
                 for(DataSnapshot snapshot:dataSnapshot.getChildren()){
-                    comment comment=snapshot.getValue(com.example.handshop.comment.class);
+                    comment comment = snapshot.getValue(com.example.handshop.models.comment.class);
                     commentArrayList.add(comment);
                 }
                 adapter.notifyDataSetChanged();

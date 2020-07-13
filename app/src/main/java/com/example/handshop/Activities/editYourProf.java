@@ -1,8 +1,10 @@
-package com.example.handshop;
+package com.example.handshop.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.handshop.R;
 
 public class editYourProf extends AppCompatActivity {
 
