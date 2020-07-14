@@ -1,4 +1,4 @@
-package com.example.handshop;
+package com.example.handshop.Fragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.handshop.Adapters.profilePhotosAdapter;
+import com.example.handshop.R;
 import com.example.handshop.models.posts;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
