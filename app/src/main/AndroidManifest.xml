@@ -16,7 +16,6 @@
         <activity android:name=".Activities.editYourProf"></activity>
         <activity android:name=".Activities.commentActivity" />
         <activity android:name=".Activities.shareActivity" />
-        <activity android:name=".profile" />
         <activity android:name=".Activities.secondMainAc" />
         <activity android:name=".Activities.login" />
         <activity android:name=".Activities.signUp" />

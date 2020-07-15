@@ -239,7 +239,7 @@ public class signUp extends AppCompatActivity {
         phoneEmail = memailSignUp.getText().toString();
         password = mpasswordSignUp.getText().toString();
         userName=mUserName.getText().toString();
-        fullName = firstName + lastName;
+        fullName = firstName +" "+ lastName;
     }
 
     private void signUPMethod(final String phoneEmail, final String password) {
@@ -260,6 +260,8 @@ public class signUp extends AppCompatActivity {
                     hashMap.put("password", password);
                     hashMap.put("fullName", fullName);
                     hashMap.put("imgUrl", defaultImageUrl);
+                    hashMap.put("website" ,"");
+                    hashMap.put("Bio","");
                     reference.setValue(hashMap);
                     Toast.makeText(signUp.this, "registered successfully", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), secondMainAc.class));

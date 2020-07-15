@@ -10,8 +10,9 @@ public class User {
     private String password;
     private String userName;
     private String Bio;
+    private String website;
 
-    public User(String id, String email, String imgUrl, String firstName, String fullName, String lastName, String password, String userName, String bio) {
+    public User(String id, String email, String imgUrl, String firstName, String fullName, String lastName, String password, String userName, String bio, String website) {
         this.id = id;
         this.email = email;
         this.imgUrl = imgUrl;
@@ -21,6 +22,7 @@ public class User {
         this.password = password;
         this.userName = userName;
         Bio = bio;
+        this.website=website;
     }
     public User(){
 
@@ -96,5 +98,13 @@ public class User {
 
     public void setBio(String bio) {
         Bio = bio;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
     }
 }

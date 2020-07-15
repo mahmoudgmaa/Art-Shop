@@ -1,9 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.editYourProf">
+    tools:context=".Activities.editYourProf"
+    android:background="#ffffff"
+    android:padding="10dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close"
+        android:tint="@color/black"
+        android:id="@+id/backFromEditDetails"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/button"
+            android:layout_alignParentBottom="true"
+            android:padding="10dp"
+            android:layout_marginTop="100dp"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="50dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/linearing"
+                >
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Full Name"
+                    android:textColorHint="@color/black"
+                    android:textColor="#000000"
+                    android:textSize="30sp"
+                    android:background="@color/fui_transparent"
+                    android:id="@+id/profileFullName"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearing"
+                android:orientation="vertical"
+                android:layout_marginTop="30dp">
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="username"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"
+                    android:paddingLeft="5dp"
+                    android:id="@+id/usernameEditText"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:hint="Bio"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"
+                    android:paddingLeft="5dp"
+                    android:id="@+id/bioEditText"/>
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:hint="Website"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"
+                    android:paddingLeft="5dp"
+                    android:id="@+id/websiteEditText"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_gravity="end"
+                    android:background="@drawable/button"
+                    android:layout_marginTop="20dp"
+                    android:text="Save"
+                    android:layout_marginRight="5dp"
+                    android:id="@+id/saveEditing"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:id="@+id/profileImageRelativeLayout"
+            >
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/prof"
+                android:id="@+id/profileImage"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/camera_foreground"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:id="@+id/editProfileImage"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

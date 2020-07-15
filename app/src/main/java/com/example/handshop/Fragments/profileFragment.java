@@ -38,7 +38,7 @@ public class profileFragment extends Fragment {
 
     private CircleImageView image_profile;
     private ImageView options;
-    private TextView nposts, followers, following, fullname, bio, username;
+    private TextView nposts, followers, following, fullname, bio, username,website;
     private Button edit_profile;
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -78,7 +78,7 @@ public class profileFragment extends Fragment {
         options = view.findViewById(R.id.options);
         tabLayout = view.findViewById(R.id.tabs);
         viewPager = view.findViewById(R.id.mainContainerViewPager);
-
+        website=view.findViewById(R.id.website);
 
 //        my_fotos = view.findViewById(R.id.my_fotos);
 //        saved_fotos = view.findViewById(R.id.saved_fotos);
@@ -170,7 +170,7 @@ public class profileFragment extends Fragment {
                 username.setText(user.getUserName());
                 fullname.setText(user.getFullName());
                 bio.setText(user.getBio());
-
+                website.setText(user.getWebsite());
             }
 
             @Override
