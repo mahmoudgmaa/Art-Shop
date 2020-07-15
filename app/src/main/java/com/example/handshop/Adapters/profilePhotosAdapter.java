@@ -1,15 +1,18 @@
 package com.example.handshop.Adapters;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.handshop.Fragments.postDetailsFragment;
 import com.example.handshop.R;
 import com.example.handshop.models.posts;
 
@@ -34,10 +37,20 @@ public class profilePhotosAdapter extends RecyclerView.Adapter<profilePhotosAdap
 
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
-        posts post=arrayList.get(position);
+        final posts post=arrayList.get(position);
         Glide.with(mContext)
                 .load(post.getPostImage())
                 .into(holder.imageView);
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor=mContext.getSharedPreferences("PREFS" , mContext.MODE_PRIVATE).edit();
+                editor.putString("postId" , post.getPostId());
+                editor.apply();
+                ((FragmentActivity)mContext).getSupportFragmentManager()
+                        .beginTransaction().replace(R.id.mainContainer , new postDetailsFragment()).commit();
+            }
+        });
     }
 
     @Override

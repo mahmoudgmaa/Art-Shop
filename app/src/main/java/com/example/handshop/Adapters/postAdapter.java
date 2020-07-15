@@ -2,6 +2,7 @@ package com.example.handshop.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,9 +10,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.handshop.Fragments.profileFragment;
 import com.example.handshop.R;
 import com.example.handshop.models.User;
 import com.example.handshop.Activities.commentActivity;
@@ -94,6 +97,36 @@ public class postAdapter extends RecyclerView.Adapter<postAdapter.viewHolder>{
                     FirebaseDatabase.getInstance().getReference().child("saved").child(currentUser.getUid())
                             .child(post.getPostId()).removeValue();
                 }
+            }
+        });
+        holder.imageProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor=mContext.getSharedPreferences("PREFS" , mContext.MODE_PRIVATE).edit();
+                editor.putString("profileId" , post.getPublisher());
+                editor.apply();
+                ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.mainContainer , new profileFragment()).commit();
+            }
+        });
+        holder.username.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor=mContext.getSharedPreferences("PREFS" , mContext.MODE_PRIVATE).edit();
+                editor.putString("profileId" , post.getPublisher());
+                editor.apply();
+                ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.mainContainer , new profileFragment()).commit();
+            }
+        });
+        holder.publisher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor=mContext.getSharedPreferences("PREFS" , mContext.MODE_PRIVATE).edit();
+                editor.putString("profileId" , post.getPublisher());
+                editor.apply();
+                ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.mainContainer , new profileFragment()).commit();
             }
         });
     }
